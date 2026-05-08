@@ -21,43 +21,50 @@
   <a href="shrine.html">العتبة</a>
 </nav>
 
-<section>
+<section class="section">
   <h2>📞 التواصل</h2>
-  <p>واتساب: 9647891501942</p>
-  <p>info@nabaalhadi.com</p>
+  <p>📱 واتساب: 9647891501942</p>
+  <p>📧 info@nabaalhadi.com</p>
+  <p>
+    📘 <a href="https://www.facebook.com/share/1GH6RL8qoJ/" target="_blank">فيسبوك</a>
+  </p>
+  <p>
+    📸 <a href="https://www.instagram.com/nabaaalhadi1" target="_blank">انستغرام</a>
+  </p>
 </section>
 
-<section>
-  <h2>🚍 الحجز السريع</h2>
+<section class="section">
+  <h2>🚍 نظام الحجز</h2>
 
   <form onsubmit="send(event)">
     <input name="from" placeholder="الانطلاق" required>
     <input name="to" placeholder="الوصول" required>
     <input name="people" placeholder="عدد الأشخاص" required>
     <input name="car" placeholder="نوع السيارة" required>
-    <input name="days" placeholder="الأيام" required>
-    <button>إرسال واتساب</button>
+    <input name="days" placeholder="عدد الأيام (مبيت)" required>
+
+    <button type="submit">إرسال واتساب</button>
   </form>
 </section>
-
-<footer>
-© 2026 نبع الهادي
-</footer>
 
 <script>
 function send(e){
   e.preventDefault();
+
   const f = e.target;
 
   const msg =
-`🚍 حجز:
-من: ${f.from.value}
-إلى: ${f.to.value}
-أشخاص: ${f.people.value}
-سيارة: ${f.car.value}
-أيام: ${f.days.value}`;
+`🚍 حجز جديد:
+📍 الانطلاق: ${f.from.value}
+📍 الوصول: ${f.to.value}
+👥 الأشخاص: ${f.people.value}
+🚗 السيارة: ${f.car.value}
+🛏 الأيام: ${f.days.value}`;
 
-  window.open("https://wa.me/9647891501942?text="+encodeURIComponent(msg));
+  window.open(
+    "https://wa.me/9647891501942?text=" + encodeURIComponent(msg),
+    "_blank"
+  );
 }
 </script>
 
