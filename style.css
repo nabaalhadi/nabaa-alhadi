@@ -1,73 +1,53 @@
 body{
   margin:0;
-  font-family: Arial, sans-serif;
+  font-family:Arial;
   background:#f5f7ff;
-  direction: rtl;
-  color:#111;
+  direction:rtl;
 }
 
-/* الشريط العلوي */
-.topnav{
-  background:#0f172a;
-  padding:12px;
-  text-align:center;
-  position:sticky;
-  top:0;
-  z-index:1000;
-}
-
-.topnav a{
-  color:white;
-  text-decoration:none;
-  margin:8px;
-  padding:8px 12px;
-  display:inline-block;
-  border-radius:8px;
-  font-weight:bold;
-  transition:0.3s;
-}
-
-.topnav a:hover{
-  background:#1e3a8a;
-}
-
-/* الهيدر */
 header{
-  background:linear-gradient(135deg,#1e3a8a,#0f172a);
+  background:#1e3a8a;
   color:white;
   text-align:center;
-  padding:30px 15px;
+  padding:20px;
 }
 
-header h1{
-  margin:0;
-  font-size:24px;
+nav{
+  background:#0f172a;
+  text-align:center;
+  padding:10px;
 }
 
-/* البطاقات */
-.card{
-  background:white;
-  margin:20px;
-  padding:15px;
-  border-radius:12px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.08);
-}
-
-/* الروابط */
-a{
-  color:#1e3a8a;
+nav a{
+  color:white;
   text-decoration:none;
+  margin:10px;
 }
 
-a:hover{
-  text-decoration:underline;
+section{
+  background:white;
+  margin:15px;
+  padding:15px;
+  border-radius:10px;
 }
 
-/* الفوتر */
+input{
+  width:100%;
+  padding:10px;
+  margin:5px 0;
+}
+
+button{
+  width:100%;
+  padding:12px;
+  background:#22c55e;
+  border:none;
+  color:white;
+  font-weight:bold;
+  border-radius:8px;
+}
+
 footer{
   text-align:center;
   padding:15px;
-  background:#0f172a;
-  color:white;
-  margin-top:30px;
 }
