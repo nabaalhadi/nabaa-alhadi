@@ -3,14 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>نبع الهادي - نقل المسافرين</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
-
+<title>نبع الهادي</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
+<header>
+  <h1>شركة نبع الهادي</h1>
+  <p>نقل مسافرين - شركة عراقية رسمية</p>
+</header>
 
 <nav>
   <a href="index.html">الرئيسية</a>
@@ -19,86 +21,43 @@
   <a href="shrine.html">العتبة</a>
 </nav>
 
-<header>
-  <h1>شركة نبع الهادي</h1>
-  <p>نقل مسافرين - شركة عراقية رسمية</p>
-</header>
-
-<!-- التواصل -->
-<section class="section">
+<section>
   <h2>📞 التواصل</h2>
-
-  <p>📱 واتساب: 9647891501942</p>
-  <p>📧 info@nabaalhadi.com</p>
-
-  <p>📘 <a href="https://www.facebook.com/share/1GH6RL8qoJ/" target="_blank">فيسبوك</a></p>
-  <p>📸 <a href="https://www.instagram.com/nabaaalhadi1" target="_blank">انستغرام</a></p>
+  <p>واتساب: 9647891501942</p>
+  <p>info@nabaalhadi.com</p>
 </section>
 
-<!-- الحجز -->
-<section class="section">
-  <h2>🚍 نظام الحجز</h2>
+<section>
+  <h2>🚍 الحجز السريع</h2>
 
-  <form onsubmit="sendWhatsApp(event)">
-
+  <form onsubmit="send(event)">
     <input name="from" placeholder="الانطلاق" required>
     <input name="to" placeholder="الوصول" required>
     <input name="people" placeholder="عدد الأشخاص" required>
     <input name="car" placeholder="نوع السيارة" required>
-    <input name="days" placeholder="عدد الأيام (مبيت)" required>
-
-    <button type="submit">إرسال الحجز عبر واتساب</button>
-
+    <input name="days" placeholder="الأيام" required>
+    <button>إرسال واتساب</button>
   </form>
 </section>
 
-<!-- السيارات -->
-<section class="section">
-  <h2>🚗 أسطول السيارات</h2>
-
-  <div class="cars">
-
-    <div class="car">
-      <img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a">
-      <p>تويوتا هايس</p>
-    </div>
-
-    <div class="car">
-      <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2">
-      <p>كيا كرنفال</p>
-    </div>
-
-    <div class="car">
-      <img src="https://images.unsplash.com/photo-1603386329225-868f9b1ee6a0">
-      <p>جمسي يوكن</p>
-    </div>
-
-  </div>
-</section>
-
 <footer>
-© 2026 نبع الهادي - جميع الحقوق محفوظة
+© 2026 نبع الهادي
 </footer>
 
-<!-- واتساب سكربت -->
 <script>
-function sendWhatsApp(e){
+function send(e){
   e.preventDefault();
-
   const f = e.target;
 
   const msg =
-`🚍 حجز جديد:
-📍 الانطلاق: ${f.from.value}
-📍 الوصول: ${f.to.value}
-👥 الأشخاص: ${f.people.value}
-🚗 السيارة: ${f.car.value}
-🛏 الأيام: ${f.days.value}`;
+`🚍 حجز:
+من: ${f.from.value}
+إلى: ${f.to.value}
+أشخاص: ${f.people.value}
+سيارة: ${f.car.value}
+أيام: ${f.days.value}`;
 
-  window.open(
-    "https://wa.me/9647891501942?text=" + encodeURIComponent(msg),
-    "_blank"
-  );
+  window.open("https://wa.me/9647891501942?text="+encodeURIComponent(msg));
 }
 </script>
 
