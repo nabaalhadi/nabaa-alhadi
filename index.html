@@ -1,160 +1,188 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>نبع الهادي - النقل والسفر</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نبع الهادي | شركة نقل وسفر</title>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      background: #f4f6fb;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
-    header {
-      background: #1e40af;
-      color: white;
-      text-align: center;
-      padding: 20px;
-    }
+<style>
+body{
+  margin:0;
+  font-family:'Cairo',sans-serif;
+  background:#f5f7ff;
+  color:#222;
+}
 
-    header h1 {
-      margin: 0;
-    }
+header{
+  background:linear-gradient(135deg,#0f172a,#1e3a8a);
+  color:white;
+  padding:25px;
+  text-align:center;
+}
 
-    .hero {
-      text-align: center;
-      padding: 30px;
-      background: white;
-    }
+header h1{margin:0;font-size:28px;}
 
-    .btn {
-      background: #1e40af;
-      color: white;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
+.hero{
+  text-align:center;
+  padding:40px 20px;
+}
 
-    .vehicles {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 15px;
-      padding: 20px;
-    }
+.hero h2{font-size:24px;}
+.hero p{color:#555;}
 
-    .card {
-      background: white;
-      border-radius: 10px;
-      padding: 10px;
-      text-align: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
+.btn{
+  background:#1e3a8a;
+  color:white;
+  padding:12px 18px;
+  border:none;
+  border-radius:10px;
+  display:inline-block;
+  text-decoration:none;
+}
 
-    .card img {
-      width: 100%;
-      border-radius: 10px;
-      height: 140px;
-      object-fit: cover;
-    }
+.section-title{
+  text-align:center;
+  margin:30px 0 10px;
+  font-size:22px;
+}
 
-    .form {
-      background: white;
-      margin: 20px;
-      padding: 20px;
-      border-radius: 10px;
-    }
+.vehicles{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:15px;
+  padding:20px;
+}
 
-    input, select, textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 5px 0;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-    }
+.card{
+  background:white;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
 
-    footer {
-      background: #1e40af;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      margin-top: 20px;
-    }
-  </style>
+.card img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+}
+
+.card h3{
+  padding:10px;
+  margin:0;
+  text-align:center;
+}
+
+.form{
+  background:white;
+  margin:20px;
+  padding:20px;
+  border-radius:15px;
+}
+
+input,textarea{
+  width:100%;
+  padding:10px;
+  margin:6px 0;
+  border:1px solid #ddd;
+  border-radius:8px;
+}
+
+.submit{
+  width:100%;
+  background:#16a34a;
+  color:white;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25d366;
+  color:white;
+  padding:14px;
+  border-radius:50px;
+  text-decoration:none;
+}
+</style>
 </head>
 
 <body>
 
 <header>
   <h1>نبع الهادي</h1>
-  <p>شركة نقل وسفر رسمية</p>
+  <p>شركة نقل وسفر VIP في العراق</p>
 </header>
 
 <div class="hero">
-  <h2>نقل آمن وراقي بين المحافظات</h2>
-  <p>حجز سريع، سيارات حديثة، وخدمة VIP</p>
-  <a class="btn" href="https://wa.me/9647703120871" target="_blank">واتساب مباشر</a>
+  <h2>نقل آمن وسريع</h2>
+  <p>حجز مباشر + سيارات حديثة</p>
+  <a class="btn" href="https://wa.me/9647891501942" target="_blank">حجز واتساب مباشر</a>
 </div>
 
-<section class="vehicles">
+<h2 class="section-title">🚗 أسطول السيارات</h2>
+
+<div class="vehicles">
+
   <div class="card">
-    <img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a"/>
-    <p>تويوتا هايس 2025</p>
+    <img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a">
+    <h3>تويوتا هايس VIP</h3>
   </div>
 
   <div class="card">
-    <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2"/>
-    <p>كيا كرنفال 2026</p>
+    <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2">
+    <h3>كيا كرنفال</h3>
   </div>
 
   <div class="card">
-    <img src="https://images.unsplash.com/photo-1603386329225-868f9b1ee6a0"/>
-    <p>جمسي يوكن 2026</p>
+    <img src="https://images.unsplash.com/photo-1603386329225-868f9b1ee6a0">
+    <h3>جمسي يوكن</h3>
   </div>
 
   <div class="card">
-    <img src="https://images.unsplash.com/photo-1542362567-b07e54358753"/>
-    <p>تويوتا كوستر 2025</p>
+    <img src="https://images.unsplash.com/photo-1542362567-b07e54358753">
+    <h3>تويوتا كوستر</h3>
   </div>
-</section>
 
-<section class="form">
-  <h2>📍 نظام الحجز</h2>
+</div>
 
-  <input id="name" placeholder="الاسم"/>
-  <input id="phone" placeholder="الهاتف"/>
-  <input id="from" placeholder="من أين"/>
-  <input id="to" placeholder="إلى أين"/>
-  <input id="people" placeholder="عدد الأشخاص"/>
-  <input id="date" type="date"/>
-  <textarea id="details" placeholder="تفاصيل إضافية"></textarea>
+<h2 class="section-title">📍 نظام الحجز</h2>
 
-  <button class="btn" onclick="sendBooking()">إرسال الحجز</button>
-</section>
+<div class="form">
 
-<footer>
-  © 2026 نبع الهادي - جميع الحقوق محفوظة
-</footer>
+<input id="name" placeholder="الاسم">
+<input id="phone" placeholder="رقم الهاتف">
+<input id="from" placeholder="من">
+<input id="to" placeholder="إلى">
+<input id="people" placeholder="عدد الأشخاص">
+<input id="date" type="date">
+<textarea id="details" placeholder="تفاصيل إضافية"></textarea>
+
+<button class="submit" onclick="send()">إرسال الحجز</button>
+
+</div>
+
+<a class="whatsapp" href="https://wa.me/9647891501942" target="_blank">واتساب</a>
 
 <script>
-function sendBooking() {
-  const phone = "9647703120871";
-
+function send(){
   const msg =
-`🚌 حجز جديد نبع الهادي:
+`🚌 حجز جديد - نبع الهادي:
 
-👤 الاسم: ${document.getElementById('name').value}
-📞 الهاتف: ${document.getElementById('phone').value}
-📍 من: ${document.getElementById('from').value}
-📍 إلى: ${document.getElementById('to').value}
-👥 الأشخاص: ${document.getElementById('people').value}
-📅 التاريخ: ${document.getElementById('date').value}
-📝 التفاصيل: ${document.getElementById('details').value}`;
+👤 الاسم: ${name.value}
+📞 الهاتف: ${phone.value}
+📍 من: ${from.value}
+📍 إلى: ${to.value}
+👥 الأشخاص: ${people.value}
+📅 التاريخ: ${date.value}
+📝 التفاصيل: ${details.value}`;
 
-  window.open(`https://wa.me/${phone}?text=` + encodeURIComponent(msg), "_blank");
+  window.open("https://wa.me/9647891501942?text="+encodeURIComponent(msg));
 }
 </script>
 
