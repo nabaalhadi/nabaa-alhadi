@@ -3,37 +3,170 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>نبع الهادي - الرئيسية</title>
-<link rel="stylesheet" href="style.css">
+<title>نبع الهادي | نقل المسافرين</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:'Cairo',sans-serif;
+  background:#0b1220;
+  color:white;
+}
+
+/* NAV */
+nav{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  padding:15px;
+  background:#0f172a;
+  position:sticky;
+  top:0;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  padding:8px 12px;
+  border-radius:8px;
+  transition:0.3s;
+}
+
+nav a:hover{
+  background:#1e3a8a;
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:60px 20px;
+  background:linear-gradient(135deg,#1e3a8a,#0f172a);
+}
+
+.hero h1{
+  font-size:32px;
+  margin:0;
+}
+
+.hero p{
+  opacity:0.9;
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:15px;
+  padding:12px 20px;
+  background:#22c55e;
+  color:white;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* SECTIONS */
+.section{
+  background:#111827;
+  margin:20px;
+  padding:20px;
+  border-radius:12px;
+}
+
+.section h2{
+  margin-top:0;
+  color:#38bdf8;
+}
+
+/* CARDS */
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+}
+
+.card{
+  background:#1f2937;
+  padding:15px;
+  border-radius:12px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25d366;
+  color:white;
+  padding:14px 16px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+footer{
+  text-align:center;
+  padding:20px;
+  background:#0f172a;
+  margin-top:30px;
+}
+</style>
+
 </head>
 
 <body>
 
-<header>
-  <h1>شركة نبع الهادي لنقل المسافرين</h1>
-  <p>شركة عراقية رسمية تابعة إلى العتبة العسكرية المقدسة</p>
-</header>
-
 <nav>
-  <a href="index.html">🏠 الرئيسية</a>
-  <a href="news.html">📰 الأخبار</a>
-  <a href="shrine.html">🕌 العتبة</a>
+  <a href="#home">الرئيسية</a>
+  <a href="#services">الخدمات</a>
+  <a href="#news">الأخبار</a>
+  <a href="#contact">التواصل</a>
 </nav>
 
-<section class="card">
-  <h2>📞 التواصل</h2>
-  <p>📱 واتساب: 9647891501942+</p>
-  <p>📧 info@nabaalhadi.com</p>
-  <p>📘 <a href="https://www.facebook.com/share/1GH6RL8qoJ/" target="_blank">صفحة الفيسبوك</a></p>
+<!-- HERO -->
+<section class="hero" id="home">
+  <h1>شركة نبع الهادي</h1>
+  <p>شركة نقل مسافرين عراقية رسمية تابعة للعتبة العسكرية المقدسة</p>
+  <a class="btn" href="https://wa.me/9647891501942" target="_blank">حجز مباشر واتساب</a>
 </section>
 
-<section class="card">
-  <h2>🚗 الرحلات</h2>
-  <p>تنطلق الرحلات من بغداد وسامراء إلى جميع المحافظات العراقية</p>
+<!-- SERVICES -->
+<section class="section" id="services">
+  <h2>🚗 خدماتنا</h2>
+
+  <div class="cards">
+    <div class="card">نقل يومي بين المحافظات</div>
+    <div class="card">نقل جماعي</div>
+    <div class="card">نقل وفود</div>
+    <div class="card">نقل طلاب جامعات</div>
+    <div class="card">استقبال مطارات</div>
+    <div class="card">نقل فردي (قريباً)</div>
+  </div>
 </section>
+
+<!-- NEWS -->
+<section class="section" id="news">
+  <h2>📰 الأخبار</h2>
+  <p>✔ توفر نقل يومي</p>
+  <p>✔ رحلات مستمرة من بغداد وسامراء</p>
+  <p>✔ توسعة خطوط جديدة قريباً</p>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <h2>📞 التواصل</h2>
+  <p>📱 9647891501942</p>
+  <p>📧 info@nabaalhadi.com</p>
+  <p>📘 فيسبوك: صفحة الشركة الرسمية</p>
+</section>
+
+<a class="whatsapp" href="https://wa.me/9647891501942" target="_blank">
+واتساب
+</a>
 
 <footer>
-© 2026 نبع الهادي
+© 2026 نبع الهادي - جميع الحقوق محفوظة
 </footer>
 
 </body>
