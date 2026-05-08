@@ -1,163 +1,162 @@
-import { useEffect, useState } from "react";
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>نبع الهادي - النقل والسفر</title>
 
-export default function NabaaAlhadiWebsite() { const whatsappNumber = "9647703120871"; const [bookings, setBookings] = useState([]); const [isAdmin, setIsAdmin] = useState(false); const [loaded, setLoaded] = useState(false);
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f6fb;
+    }
 
-useEffect(() => { const saved = JSON.parse(localStorage.getItem("bookings") || "[]"); setBookings(saved);
+    header {
+      background: #1e40af;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
 
-const admin = localStorage.getItem("admin") === "true";
-setIsAdmin(admin);
+    header h1 {
+      margin: 0;
+    }
 
-setTimeout(() => setLoaded(true), 300);
+    .hero {
+      text-align: center;
+      padding: 30px;
+      background: white;
+    }
 
-}, []);
+    .btn {
+      background: #1e40af;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
 
-const loginAsAdmin = () => { const pass = prompt("أدخل كلمة المرور"); if (pass === "1234") { localStorage.setItem("admin", "true"); setIsAdmin(true); alert("تم تسجيل الدخول بنجاح"); } else { alert("كلمة المرور غير صحيحة"); } };
+    .vehicles {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      padding: 20px;
+    }
 
-const sendToWhatsApp = (e) => { e.preventDefault(); const form = e.target;
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
 
-const booking = {
-  name: form.name.value,
-  phone: form.phone.value,
-  from: form.from.value,
-  to: form.to.value,
-  passengers: form.passengers.value,
-  vehicle: form.vehicle.value,
-  tripType: form.tripType.value,
-  date: form.date.value,
-  returnDays: form.returnDays.value,
-  details: form.details.value,
-};
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      height: 140px;
+      object-fit: cover;
+    }
 
-const updated = [...bookings, booking];
-setBookings(updated);
-localStorage.setItem("bookings", JSON.stringify(updated));
+    .form {
+      background: white;
+      margin: 20px;
+      padding: 20px;
+      border-radius: 10px;
+    }
 
-const message = `🚌 حجز جديد نبع الهادي:\n\n` +
-  `👤 الاسم: ${booking.name}\n` +
-  `📞 الهاتف: ${booking.phone}\n` +
-  `📍 من: ${booking.from}\n` +
-  `📍 إلى: ${booking.to}\n` +
-  `👥 عدد الأشخاص: ${booking.passengers}\n` +
-  `🚗 السيارة: ${booking.vehicle}\n` +
-  `🔁 نوع الرحلة: ${booking.tripType}\n` +
-  `📅 التاريخ: ${booking.date}\n` +
-  `⏳ أيام العودة: ${booking.returnDays}\n` +
-  `📝 تفاصيل: ${booking.details}`;
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
 
-window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`, "_blank");
+    footer {
+      background: #1e40af;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
 
-};
+<body>
 
-const vehicles = [ { name: "تويوتا هايس 2025", img: "https://images.unsplash.com/photo-1619767886558-efdc259cde1a" }, { name: "كيا كرنفال 2026", img: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2" }, { name: "جمسي يوكن 2026", img: "https://images.unsplash.com/photo-1603386329225-868f9b1ee6a0" }, { name: "تويوتا كوستر 2025", img: "https://images.unsplash.com/photo-1542362567-b07e54358753" } ];
+<header>
+  <h1>نبع الهادي</h1>
+  <p>شركة نقل وسفر رسمية</p>
+</header>
 
-return ( <div className={min-h-screen bg-gradient-to-b from-white to-blue-50 text-gray-900 transition-all duration-700 ${loaded ? "opacity-100" : "opacity-0"}}>
-
-{/* HEADER */}
-  <header className="bg-blue-700 text-white p-4 flex justify-between items-center shadow-lg sticky top-0 z-50">
-    <div className="flex items-center gap-3">
-      <div className="w-10 h-10 bg-white text-blue-700 flex items-center justify-center rounded-full font-bold animate-pulse">
-        ن
-      </div>
-      <div>
-        <h1 className="text-2xl font-bold tracking-wide">نبع الهادي</h1>
-        <p className="text-xs opacity-90">شركة نقل وسفر رسمية</p>
-      </div>
-    </div>
-
-    <div className="flex gap-2">
-      {!isAdmin && (
-        <button onClick={loginAsAdmin} className="bg-black text-white px-3 py-1 rounded hover:scale-105 transition">
-          دخول إداري
-        </button>
-      )}
-
-      <a href={`https://wa.me/${whatsappNumber}`} className="bg-white text-blue-700 px-4 py-2 rounded hover:scale-105 transition font-bold">
-        واتساب
-      </a>
-    </div>
-  </header>
-
-  {/* HERO */}
-  <section className="text-center py-16 px-6">
-    <h2 className="text-4xl font-extrabold mb-3 animate-fade-in">نقل آمن وراقي بين المحافظات</h2>
-    <p className="text-gray-600 max-w-xl mx-auto">حجز سريع، سيارات حديثة، وخدمة VIP تغطي جميع العراق</p>
-  </section>
-
-  {/* VEHICLES */}
-  <section className="p-6">
-    <h2 className="text-2xl font-bold text-center mb-6">🚗 أسطول السيارات</h2>
-
-    <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-      {vehicles.map((v, i) => (
-        <div key={i} className="rounded-xl overflow-hidden shadow-lg bg-white hover:scale-105 transition duration-300">
-          <img src={v.img} alt={v.name} className="h-52 w-full object-cover" />
-          <div className="p-4 text-center font-bold text-lg">{v.name}</div>
-        </div>
-      ))}
-    </div>
-  </section>
-
-  {/* BOOKING */}
-  <section className="p-6 bg-blue-50">
-    <h2 className="text-2xl font-bold text-center mb-4">📍 نظام الحجز</h2>
-
-    <form onSubmit={sendToWhatsApp} className="space-y-3 max-w-xl mx-auto bg-white p-4 rounded-xl shadow">
-
-      <input name="name" placeholder="الاسم" className="w-full p-2 border rounded" required />
-      <input name="phone" placeholder="الهاتف" className="w-full p-2 border rounded" required />
-
-      <input name="from" placeholder="من أين" className="w-full p-2 border rounded" required />
-      <input name="to" placeholder="إلى أين" className="w-full p-2 border rounded" required />
-
-      <input name="passengers" type="number" placeholder="عدد الأشخاص" className="w-full p-2 border rounded" required />
-
-      <select name="vehicle" className="w-full p-2 border rounded" required>
-        {vehicles.map((v, i) => (
-          <option key={i} value={v.name}>{v.name}</option>
-        ))}
-      </select>
-
-      <select name="tripType" className="w-full p-2 border rounded" required>
-        <option>ذهاب وعودة</option>
-        <option>فقط ذهاب</option>
-      </select>
-
-      <input name="date" type="date" className="w-full p-2 border rounded" required />
-      <input name="returnDays" type="number" placeholder="عدد أيام العودة" className="w-full p-2 border rounded" />
-
-      <textarea name="details" placeholder="تفاصيل إضافية" className="w-full p-2 border rounded" />
-
-      <button className="w-full bg-blue-700 text-white p-3 rounded-xl hover:bg-blue-800 transition">
-        إرسال الحجز
-      </button>
-    </form>
-  </section>
-
-  {/* ADMIN */}
-  {isAdmin && (
-    <section className="p-6">
-      <h2 className="text-xl font-bold text-center mb-4">📊 لوحة الإدارة</h2>
-
-      <div className="max-w-3xl mx-auto space-y-3">
-        {bookings.length === 0 && <p className="text-center text-gray-500">لا توجد حجوزات</p>}
-
-        {bookings.map((b, i) => (
-          <div key={i} className="border p-3 rounded shadow bg-white">
-            <p><b>👤</b> {b.name}</p>
-            <p><b>📞</b> {b.phone}</p>
-            <p><b>🚐</b> {b.from} ➜ {b.to}</p>
-            <p><b>🚗</b> {b.vehicle}</p>
-          </div>
-        ))}
-      </div>
-    </section>
-  )}
-
-  {/* FOOTER */}
-  <footer className="bg-blue-700 text-white text-center p-4 mt-10">
-    © 2026 نبع الهادي - جميع الحقوق محفوظة
-  </footer>
-
+<div class="hero">
+  <h2>نقل آمن وراقي بين المحافظات</h2>
+  <p>حجز سريع، سيارات حديثة، وخدمة VIP</p>
+  <a class="btn" href="https://wa.me/9647703120871" target="_blank">واتساب مباشر</a>
 </div>
 
-); }
+<section class="vehicles">
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a"/>
+    <p>تويوتا هايس 2025</p>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2"/>
+    <p>كيا كرنفال 2026</p>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1603386329225-868f9b1ee6a0"/>
+    <p>جمسي يوكن 2026</p>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1542362567-b07e54358753"/>
+    <p>تويوتا كوستر 2025</p>
+  </div>
+</section>
+
+<section class="form">
+  <h2>📍 نظام الحجز</h2>
+
+  <input id="name" placeholder="الاسم"/>
+  <input id="phone" placeholder="الهاتف"/>
+  <input id="from" placeholder="من أين"/>
+  <input id="to" placeholder="إلى أين"/>
+  <input id="people" placeholder="عدد الأشخاص"/>
+  <input id="date" type="date"/>
+  <textarea id="details" placeholder="تفاصيل إضافية"></textarea>
+
+  <button class="btn" onclick="sendBooking()">إرسال الحجز</button>
+</section>
+
+<footer>
+  © 2026 نبع الهادي - جميع الحقوق محفوظة
+</footer>
+
+<script>
+function sendBooking() {
+  const phone = "9647703120871";
+
+  const msg =
+`🚌 حجز جديد نبع الهادي:
+
+👤 الاسم: ${document.getElementById('name').value}
+📞 الهاتف: ${document.getElementById('phone').value}
+📍 من: ${document.getElementById('from').value}
+📍 إلى: ${document.getElementById('to').value}
+👥 الأشخاص: ${document.getElementById('people').value}
+📅 التاريخ: ${document.getElementById('date').value}
+📝 التفاصيل: ${document.getElementById('details').value}`;
+
+  window.open(`https://wa.me/${phone}?text=` + encodeURIComponent(msg), "_blank");
+}
+</script>
+
+</body>
+</html>
