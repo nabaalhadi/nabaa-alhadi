@@ -3,188 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>نبع الهادي | شركة نقل وسفر</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-
-<style>
-body{
-  margin:0;
-  font-family:'Cairo',sans-serif;
-  background:#f5f7ff;
-  color:#222;
-}
-
-header{
-  background:linear-gradient(135deg,#0f172a,#1e3a8a);
-  color:white;
-  padding:25px;
-  text-align:center;
-}
-
-header h1{margin:0;font-size:28px;}
-
-.hero{
-  text-align:center;
-  padding:40px 20px;
-}
-
-.hero h2{font-size:24px;}
-.hero p{color:#555;}
-
-.btn{
-  background:#1e3a8a;
-  color:white;
-  padding:12px 18px;
-  border:none;
-  border-radius:10px;
-  display:inline-block;
-  text-decoration:none;
-}
-
-.section-title{
-  text-align:center;
-  margin:30px 0 10px;
-  font-size:22px;
-}
-
-.vehicles{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:15px;
-  padding:20px;
-}
-
-.card{
-  background:white;
-  border-radius:15px;
-  overflow:hidden;
-  box-shadow:0 8px 20px rgba(0,0,0,0.08);
-}
-
-.card img{
-  width:100%;
-  height:160px;
-  object-fit:cover;
-}
-
-.card h3{
-  padding:10px;
-  margin:0;
-  text-align:center;
-}
-
-.form{
-  background:white;
-  margin:20px;
-  padding:20px;
-  border-radius:15px;
-}
-
-input,textarea{
-  width:100%;
-  padding:10px;
-  margin:6px 0;
-  border:1px solid #ddd;
-  border-radius:8px;
-}
-
-.submit{
-  width:100%;
-  background:#16a34a;
-  color:white;
-  padding:12px;
-  border:none;
-  border-radius:10px;
-  cursor:pointer;
-}
-
-.whatsapp{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  background:#25d366;
-  color:white;
-  padding:14px;
-  border-radius:50px;
-  text-decoration:none;
-}
-</style>
+<title>نبع الهادي - الرئيسية</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header>
-  <h1>نبع الهادي</h1>
-  <p>شركة نقل وسفر VIP في العراق</p>
+  <h1>شركة نبع الهادي لنقل المسافرين</h1>
+  <p>شركة عراقية رسمية تابعة إلى العتبة العسكرية المقدسة</p>
 </header>
 
-<div class="hero">
-  <h2>نقل آمن وسريع</h2>
-  <p>حجز مباشر + سيارات حديثة</p>
-  <a class="btn" href="https://wa.me/9647891501942" target="_blank">حجز واتساب مباشر</a>
-</div>
+<nav>
+  <a href="index.html">🏠 الرئيسية</a>
+  <a href="news.html">📰 الأخبار</a>
+  <a href="shrine.html">🕌 العتبة</a>
+</nav>
 
-<h2 class="section-title">🚗 أسطول السيارات</h2>
+<section class="card">
+  <h2>📞 التواصل</h2>
+  <p>📱 واتساب: 9647891501942+</p>
+  <p>📧 info@nabaalhadi.com</p>
+  <p>📘 <a href="https://www.facebook.com/share/1GH6RL8qoJ/" target="_blank">صفحة الفيسبوك</a></p>
+</section>
 
-<div class="vehicles">
+<section class="card">
+  <h2>🚗 الرحلات</h2>
+  <p>تنطلق الرحلات من بغداد وسامراء إلى جميع المحافظات العراقية</p>
+</section>
 
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1619767886558-efdc259cde1a">
-    <h3>تويوتا هايس VIP</h3>
-  </div>
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2">
-    <h3>كيا كرنفال</h3>
-  </div>
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1603386329225-868f9b1ee6a0">
-    <h3>جمسي يوكن</h3>
-  </div>
-
-  <div class="card">
-    <img src="https://images.unsplash.com/photo-1542362567-b07e54358753">
-    <h3>تويوتا كوستر</h3>
-  </div>
-
-</div>
-
-<h2 class="section-title">📍 نظام الحجز</h2>
-
-<div class="form">
-
-<input id="name" placeholder="الاسم">
-<input id="phone" placeholder="رقم الهاتف">
-<input id="from" placeholder="من">
-<input id="to" placeholder="إلى">
-<input id="people" placeholder="عدد الأشخاص">
-<input id="date" type="date">
-<textarea id="details" placeholder="تفاصيل إضافية"></textarea>
-
-<button class="submit" onclick="send()">إرسال الحجز</button>
-
-</div>
-
-<a class="whatsapp" href="https://wa.me/9647891501942" target="_blank">واتساب</a>
-
-<script>
-function send(){
-  const msg =
-`🚌 حجز جديد - نبع الهادي:
-
-👤 الاسم: ${name.value}
-📞 الهاتف: ${phone.value}
-📍 من: ${from.value}
-📍 إلى: ${to.value}
-👥 الأشخاص: ${people.value}
-📅 التاريخ: ${date.value}
-📝 التفاصيل: ${details.value}`;
-
-  window.open("https://wa.me/9647891501942?text="+encodeURIComponent(msg));
-}
-</script>
+<footer>
+© 2026 نبع الهادي
+</footer>
 
 </body>
 </html>
